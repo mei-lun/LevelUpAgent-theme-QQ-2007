@@ -1,6 +1,6 @@
 # LevelUpAgent QQ 2007 Theme
 
-面向 [LevelUpAgent](https://github.com/mei-lun/LevelUpAgent) 的 QQ 2007 经典蓝色第三方主题。
+面向 [LevelUpAgent](https://github.com/mei-lun/LevelUpAgent) 的 QQ 2007 经典蓝色第三方主题，还有源项目[LevelUpAgent](https://github.com/TippingGame/LevelUpAgent)在这里。
 
 它不是简单的颜色覆盖，而是一套与 LevelUpAgent 功能结合的完整工作台布局。主题启用后提供 QQ 2007 风格的标题栏、工具栏、项目树、会话区、好友/环境面板、输入区和状态栏；切换或卸载后会恢复 LevelUpAgent 默认界面。
 
