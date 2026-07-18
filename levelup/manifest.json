@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "id": "qq-2007",
   "name": "QQ 2007",
-  "version": "3.0.0",
+  "version": "3.0.2",
   "author": "LevelUpAgent QQ 2007 Theme contributors",
   "description": "为 LevelUpAgent 适配的 QQ 2007 蓝色经典工作台主题。",
   "layoutFile": "layout.json",

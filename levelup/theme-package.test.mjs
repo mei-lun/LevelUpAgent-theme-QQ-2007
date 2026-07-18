@@ -18,6 +18,13 @@ test("LevelUpAgent theme source is scoped and the bundle is self-contained", asy
       assert.ok(selector.includes(scope), `Unscoped selector: ${selector.trim()}`);
     }
   }
+  const emptyStateRule = sourceCss.match(/html\[data-levelup-theme="qq-2007"\] \.empty-state \{([^}]*)\}/)?.[1];
+  assert.ok(emptyStateRule, "The QQ 2007 empty-conversation rule is missing");
+  assert.match(emptyStateRule, /\bwidth:\s*100%;/, "New conversations must fill the conversation width");
+  assert.doesNotMatch(emptyStateRule, /\bwidth:\s*min\(/, "New conversations must not restore a fixed-width card");
+  assert.match(emptyStateRule, /\bpadding:\s*36px;/, "New-conversation content must use symmetric spacing");
+  assert.match(emptyStateRule, /\btext-align:\s*center;/, "New-conversation content must remain centered");
+  assert.doesNotMatch(sourceCss, /\.empty-state::after/, "New conversations must not render the QQ Show artwork");
 
   const outputDirectory = path.join(root, "dist", manifest.id);
   const bundlePath = path.join(outputDirectory, "levelupagent-qq-2007.levelup-theme");

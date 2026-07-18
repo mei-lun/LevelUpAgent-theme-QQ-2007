@@ -1,7 +1,7 @@
 {
   "name": "levelupagent-theme-qq-2007",
   "private": true,
-  "version": "3.0.0",
+  "version": "3.0.2",
   "type": "module",
   "scripts": {
     "build": "node levelup/build-theme.mjs",

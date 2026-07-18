@@ -213,8 +213,7 @@ html[data-levelup-theme="qq-2007"] .message .message-body { padding: 0; border: 
 html[data-levelup-theme="qq-2007"] .message-avatar { border: 1px solid #6f9fca; border-radius: 2px; background: #e9f5ff; }
 html[data-levelup-theme="qq-2007"] .assistant-avatar img { content: var(--qq2007-assistant); }
 html[data-levelup-theme="qq-2007"] .markdown-body pre { border: 1px solid #8ca6c2; border-radius: 3px; background: #f0f5f9; box-shadow: inset 1px 1px 3px rgba(62,89,118,.16); }
-html[data-levelup-theme="qq-2007"] .empty-state { width: min(620px, calc(100% - 48px)); min-height: 300px; position: relative; overflow: hidden; padding: 42px 220px 36px 36px; border: 1px solid #7c9fc2; border-radius: 2px; background: linear-gradient(135deg, #fff, #e4f3ff); box-shadow: inset 0 0 0 1px #fff, 0 8px 20px rgba(25,86,151,.15); text-align: left; }
-html[data-levelup-theme="qq-2007"] .empty-state::after { content: ""; position: absolute; right: 12px; bottom: 0; width: 205px; height: 276px; background: var(--qq2007-show) bottom center / contain no-repeat; }
+html[data-levelup-theme="qq-2007"] .empty-state { width: 100%; min-height: 300px; position: relative; overflow: hidden; padding: 36px; border: 1px solid #7c9fc2; border-radius: 2px; background: linear-gradient(135deg, #fff, #e4f3ff); box-shadow: inset 0 0 0 1px #fff, 0 8px 20px rgba(25,86,151,.15); text-align: center; }
 html[data-levelup-theme="qq-2007"] .empty-state > * { position: relative; z-index: 1; }
 
 html[data-levelup-theme="qq-2007"] .composer-wrap { min-height: 152px; display: flex; align-items: stretch; padding: 0; border-top: 1px solid var(--qq-edge); background: #fff; }
