@@ -146,5 +146,5 @@ docs/LAYOUTS.md
 ```
 
 ## 许可与声明
-
+本项目基于 source-project/Codex-QQ-2007 继续开发
 本主题是非官方项目，与 LevelUpAgent、OpenAI、Tencent 或 QQ 无隶属、授权或赞助关系。项目历史、素材和商标说明见 [NOTICE.md](./NOTICE.md)。
