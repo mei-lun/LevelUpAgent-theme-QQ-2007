@@ -1,23 +1,15 @@
 # Notices
 
-Codex QQ 2007 for macOS is an unofficial customization project. It is not affiliated with, endorsed by, or sponsored by OpenAI, Tencent, or QQ.
-
-## Upstream
-
-This project is derived from the macOS engine in [Fei-Away/Codex-Dream-Skin](https://github.com/Fei-Away/Codex-Dream-Skin), distributed under the MIT License. The repository license retains both LevelUpAgent contributors's project notice and the upstream contributor notice; the original upstream license is also preserved in `macos/LICENSE`.
+Codex QQ 2007 for LevelUpAgent is an unofficial visual theme. It is not affiliated with, endorsed by, or sponsored by OpenAI, Tencent, QQ, or LevelUpAgent.
 
 ## Software license
 
-The MIT License applies to the software source code, scripts, CSS, injectors, tests, and project documentation. It does not grant rights to OpenAI, Codex, Tencent, QQ, or other third-party trademarks, product names, logos, application binaries, or trade dress.
+The MIT License applies to the theme source, build script, tests, and documentation. It does not grant rights to third-party trademarks, product names, logos, application binaries, or trade dress.
 
-## Generated theme artwork
+The project history includes work derived from Fei-Away/Codex-Dream-Skin. The repository license retains the original contributor attribution.
 
-The generated files under `macos/presets/preset-codex-1907-deep/` are fictional customization assets created for this project. They are not official OpenAI, Codex, Tencent, or QQ artwork and do not contain Tencent's official penguin or QQ client assets. Review image and trademark rights independently before commercial redistribution.
+## Theme artwork
 
-The bitmap sprite `macos/assets/qq2007-icons.png` is generated from project-original pixel primitives by `macos/scripts/generate-qq2007-icons.mjs`.
+The artwork under `levelup/assets/` consists of project customization assets. It is not official OpenAI, Tencent, or QQ artwork. Review image and trademark rights independently before commercial redistribution.
 
-`docs/images/codex-qq-2007-preview.png` is a user-authorized runtime screenshot included for repository documentation only. It contains application UI and must not be imported or redistributed as a theme background.
-
-## Runtime
-
-The project does not redistribute Codex Desktop or Node.js. It validates and uses the Node.js runtime signed and bundled inside the user's official Codex application. Theme injection uses a loopback-only Chromium DevTools Protocol endpoint and does not modify the official application bundle or code signature.
+The generated `.levelup-theme` package embeds these assets as `data:` URLs and does not redistribute LevelUpAgent or Codex Desktop binaries.

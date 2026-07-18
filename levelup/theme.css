@@ -1,0 +1,295 @@
+html[data-levelup-theme="qq-2007"] {
+  color-scheme: light;
+  --canvas: #c8dff4;
+  --sidebar: #edf6fd;
+  --panel: #edf6fd;
+  --surface: #fff;
+  --surface-raised: #fff;
+  --line: #aac4dc;
+  --line-strong: #6d91b8;
+  --text: #173b61;
+  --muted: #587899;
+  --faint: #7896b2;
+  --accent: #2878d0;
+  --accent-hover: #14559d;
+  --teal: #39a975;
+  --teal-soft: #d9f5e7;
+  --yellow-soft: #fff1bf;
+  --danger-soft: #ffe2e2;
+  --shadow: 0 5px 18px rgba(25, 86, 151, .22);
+  --qq-edge-dark: #456d98;
+  --qq-edge: #6d91b8;
+  --qq-title: linear-gradient(180deg, #8bd0fb 0%, #4c9de1 39%, #196ab8 51%, #3a90d8 82%, #1d6fbd 100%);
+  --qq-header: linear-gradient(180deg, #fff 0%, #edf7ff 42%, #c6e0f7 58%, #e8f5ff 100%);
+  --qq-panel: linear-gradient(90deg, #fbfdff 0%, #edf6fd 56%, #e2f0fb 100%);
+  --qq-selected: linear-gradient(180deg, #fffef2 0%, #ffe6a7 48%, #ffc966 49%, #fff0be 100%);
+  --qq2007-background: url("__ASSET_BACKGROUND__");
+  --qq2007-assistant: url("__ASSET_ASSISTANT__");
+  --qq2007-show: url("__ASSET_QQ_SHOW__");
+  --qq2007-icons: url("__ASSET_ICONS__");
+  font-family: Tahoma, "Microsoft YaHei", "微软雅黑", "SimSun", sans-serif;
+  color: var(--text);
+  background: #c8dff4;
+}
+
+html[data-levelup-theme="qq-2007"] body {
+  color: var(--text);
+  background: #c8dff4;
+}
+
+html[data-levelup-theme="qq-2007"] .app-shell.qq2007-layout {
+  grid-template-columns: clamp(250px, 22vw, 330px) minmax(0, 1fr) 300px;
+  grid-template-rows: 46px 46px minmax(0, 1fr) 25px;
+  gap: 0;
+  background: #c8dff4;
+  background-image: linear-gradient(to top, rgba(51, 137, 212, .15), transparent 76px);
+}
+
+html[data-levelup-theme="qq-2007"] .app-shell.qq2007-layout.details-collapsed {
+  grid-template-columns: clamp(250px, 22vw, 330px) minmax(0, 1fr) 0;
+}
+
+html[data-levelup-theme="qq-2007"] .qq2007-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  flex: 0 0 16px;
+  background: var(--qq2007-icons) no-repeat;
+  background-size: 224px 16px;
+  image-rendering: pixelated;
+}
+html[data-levelup-theme="qq-2007"] .qq2007-icon-mascot { background-position: 0 0; }
+html[data-levelup-theme="qq-2007"] .qq2007-icon-new-task { background-position: -16px 0; }
+html[data-levelup-theme="qq-2007"] .qq2007-icon-scheduled { background-position: -32px 0; }
+html[data-levelup-theme="qq-2007"] .qq2007-icon-plugins { background-position: -48px 0; }
+html[data-levelup-theme="qq-2007"] .qq2007-icon-sites { background-position: -64px 0; }
+html[data-levelup-theme="qq-2007"] .qq2007-icon-pull-request { background-position: -80px 0; }
+html[data-levelup-theme="qq-2007"] .qq2007-icon-chat { background-position: -96px 0; }
+html[data-levelup-theme="qq-2007"] .qq2007-icon-mail { background-position: -112px 0; }
+html[data-levelup-theme="qq-2007"] .qq2007-icon-star,
+html[data-levelup-theme="qq-2007"] .qq2007-icon-skin { background-position: -128px 0; }
+html[data-levelup-theme="qq-2007"] .qq2007-icon-groups { background-position: -144px 0; }
+html[data-levelup-theme="qq-2007"] .qq2007-icon-folder { background-position: -160px 0; }
+html[data-levelup-theme="qq-2007"] .qq2007-icon-search { background-position: -176px 0; }
+html[data-levelup-theme="qq-2007"] .qq2007-icon-online { background-position: -192px 0; }
+html[data-levelup-theme="qq-2007"] .qq2007-icon-security { background-position: -208px 0; }
+
+html[data-levelup-theme="qq-2007"] .qq2007-titlebar {
+  position: relative;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 12px;
+  overflow: hidden;
+  border: 1px solid var(--qq-edge-dark);
+  border-bottom: 0;
+  border-radius: 12px 12px 0 0;
+  background: var(--qq-title);
+  box-shadow: inset 0 1px rgba(255, 255, 255, .85), inset 0 -1px rgba(255, 255, 255, .24);
+  color: #fff;
+  text-shadow: 0 1px #0b4b8e;
+  user-select: none;
+}
+html[data-levelup-theme="qq-2007"] .qq2007-titlebar strong { min-width: 0; overflow: hidden; font-size: 14px; text-overflow: ellipsis; white-space: nowrap; }
+html[data-levelup-theme="qq-2007"] .qq2007-title-spacer { flex: 1; }
+html[data-levelup-theme="qq-2007"] .qq2007-title-spacer-right { flex: 1; }
+html[data-levelup-theme="qq-2007"] .qq2007-titlebar.maximized { border-radius: 0; }
+html[data-levelup-theme="qq-2007"] .qq2007-window-controls { position: absolute; top: 0; right: 0; bottom: 0; display: flex; }
+html[data-levelup-theme="qq-2007"] .qq2007-window-controls button { position: relative; width: 44px; height: 100%; display: grid; place-items: center; padding: 0; border: 0; border-left: 1px solid rgba(15, 78, 134, .34); background: rgba(255,255,255,.08); color: #fff; cursor: default; }
+html[data-levelup-theme="qq-2007"] .qq2007-window-controls button:hover { background: rgba(255,255,255,.25); }
+html[data-levelup-theme="qq-2007"] .qq2007-window-controls button:active { background: rgba(7,62,115,.26); }
+html[data-levelup-theme="qq-2007"] .qq2007-window-controls .qq2007-window-close:hover { background: #e54848; }
+html[data-levelup-theme="qq-2007"] .qq2007-window-controls i { position: relative; width: 12px; height: 10px; display: block; }
+html[data-levelup-theme="qq-2007"] .qq2007-window-minimize i::before { content: ""; position: absolute; left: 1px; right: 1px; bottom: 1px; height: 1px; background: currentColor; }
+html[data-levelup-theme="qq-2007"] .qq2007-window-maximize i::before { content: ""; position: absolute; inset: 0; border: 1px solid currentColor; box-shadow: inset 0 2px rgba(255,255,255,.35); }
+html[data-levelup-theme="qq-2007"] .qq2007-titlebar.maximized .qq2007-window-maximize i::before { inset: 2px 0 0 2px; }
+html[data-levelup-theme="qq-2007"] .qq2007-titlebar.maximized .qq2007-window-maximize i::after { content: ""; position: absolute; left: 0; top: 0; width: 8px; height: 6px; border: 1px solid currentColor; background: #338ed5; }
+html[data-levelup-theme="qq-2007"] .qq2007-window-close i::before,
+html[data-levelup-theme="qq-2007"] .qq2007-window-close i::after { content: ""; position: absolute; left: 0; top: 4px; width: 13px; height: 1px; background: currentColor; transform: rotate(45deg); }
+html[data-levelup-theme="qq-2007"] .qq2007-window-close i::after { transform: rotate(-45deg); }
+
+html[data-levelup-theme="qq-2007"] .qq2007-toolbar {
+  min-width: 0;
+  display: flex;
+  align-items: stretch;
+  gap: 1px;
+  padding: 3px 8px;
+  overflow: hidden;
+  border: 1px solid var(--qq-edge);
+  background: var(--qq-header);
+  box-shadow: inset 0 1px #fff, inset 0 -1px #fff;
+}
+html[data-levelup-theme="qq-2007"] .qq2007-toolbar > button {
+  min-width: 74px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 9px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  background: transparent;
+  color: #173e68;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+html[data-levelup-theme="qq-2007"] .qq2007-toolbar > button:hover,
+html[data-levelup-theme="qq-2007"] .qq2007-toolbar > button.active {
+  border-color: #d99628;
+  background: var(--qq-selected);
+  box-shadow: inset 0 0 0 1px #fff;
+}
+html[data-levelup-theme="qq-2007"] .qq2007-toolbar > button .qq2007-icon { width: 24px; height: 24px; flex-basis: 24px; background-size: 336px 24px; }
+html[data-levelup-theme="qq-2007"] .qq2007-toolbar .qq2007-icon-new-task { background-position: -24px 0; }
+html[data-levelup-theme="qq-2007"] .qq2007-toolbar .qq2007-icon-scheduled { background-position: -48px 0; }
+html[data-levelup-theme="qq-2007"] .qq2007-toolbar .qq2007-icon-plugins { background-position: -72px 0; }
+html[data-levelup-theme="qq-2007"] .qq2007-toolbar .qq2007-icon-sites { background-position: -96px 0; }
+html[data-levelup-theme="qq-2007"] .qq2007-toolbar .qq2007-icon-pull-request { background-position: -120px 0; }
+html[data-levelup-theme="qq-2007"] .qq2007-toolbar .qq2007-icon-chat { background-position: -144px 0; }
+html[data-levelup-theme="qq-2007"] .qq2007-toolbar .qq2007-icon-skin { background-position: -192px 0; }
+
+html[data-levelup-theme="qq-2007"] .qq2007-layout > .sidebar {
+  min-width: 0;
+  min-height: 0;
+  margin: 4px 0 4px 4px;
+  padding: 0;
+  border: 1px solid var(--qq-edge);
+  border-radius: 1px;
+  background: var(--qq-panel);
+  box-shadow: inset 0 0 0 1px #fff, 0 1px 2px rgba(31, 78, 121, .16);
+  backdrop-filter: none;
+}
+html[data-levelup-theme="qq-2007"] .sidebar-header { height: 58px; padding: 0 12px; border-bottom: 1px solid var(--qq-edge); background: linear-gradient(#fff, #e1f1ff); color: #173b61; }
+html[data-levelup-theme="qq-2007"] .sidebar-header .brand { height: 56px; color: #173b61; text-shadow: none; }
+html[data-levelup-theme="qq-2007"] .sidebar-header .brand-copy strong { font-size: 18px; }
+html[data-levelup-theme="qq-2007"] .sidebar-header .brand-copy small { color: #6384a4; }
+html[data-levelup-theme="qq-2007"] .brand-mark { width: 30px; height: 30px; border-color: #8eb5d8; border-radius: 3px; }
+html[data-levelup-theme="qq-2007"] .sidebar-service-row,
+html[data-levelup-theme="qq-2007"] .sidebar-primary-actions,
+html[data-levelup-theme="qq-2007"] .media-nav-button { display: none; }
+html[data-levelup-theme="qq-2007"] .sidebar-search { margin: 5px; border-color: #86a8c7; border-radius: 1px; background: #fff; }
+html[data-levelup-theme="qq-2007"] .sidebar-section-heading { height: 28px; margin-top: 28px; padding: 0 9px; border-top: 1px solid #7c9fc2; border-bottom: 1px solid #7c9fc2; background: var(--qq-header); color: #28577f; font-size: 12px; font-weight: 700; text-transform: none; }
+html[data-levelup-theme="qq-2007"] .project-list { padding: 4px; scrollbar-color: #87a9ca transparent; }
+html[data-levelup-theme="qq-2007"] .project-group { margin: 0 0 3px; }
+html[data-levelup-theme="qq-2007"] .project-row { min-height: 28px; border: 1px solid transparent; border-radius: 1px; }
+html[data-levelup-theme="qq-2007"] .project-row:hover,
+html[data-levelup-theme="qq-2007"] .thread-row:hover { border-color: #8fb0cf; background: linear-gradient(#fff, #d5ebfc); }
+html[data-levelup-theme="qq-2007"] .project-group.active > .project-row,
+html[data-levelup-theme="qq-2007"] .thread-row.active { border-color: #d68a18; background: var(--qq-selected); box-shadow: inset 0 0 0 1px #fff; }
+html[data-levelup-theme="qq-2007"] .project-toggle,
+html[data-levelup-theme="qq-2007"] .thread-row > button:first-child { height: 27px; color: #244c74; font-size: 12px; }
+html[data-levelup-theme="qq-2007"] .project-threads { margin-left: 14px; padding-left: 7px; }
+html[data-levelup-theme="qq-2007"] .thread-row { min-height: 25px; border-radius: 1px; }
+html[data-levelup-theme="qq-2007"] .thread-row > button:first-child { height: 25px; }
+html[data-levelup-theme="qq-2007"] .account-button { min-height: 44px; margin: 0; padding: 5px 10px; border-top: 1px solid #7b9cbc; border-radius: 0; background: linear-gradient(#eef8ff, #d5eafa); }
+
+html[data-levelup-theme="qq-2007"] .qq2007-layout > .workspace-shell,
+html[data-levelup-theme="qq-2007"] .qq2007-layout > .media-studio {
+  min-width: 0;
+  min-height: 0;
+  margin: 4px 0 4px 4px;
+  overflow: hidden;
+  border: 1px solid var(--qq-edge);
+  border-radius: 1px;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px #fff, 0 1px 2px rgba(31, 78, 121, .16);
+  backdrop-filter: none;
+}
+html[data-levelup-theme="qq-2007"] .qq2007-layout > .workspace-shell { grid-template-rows: 30px minmax(0, 1fr) auto auto; }
+html[data-levelup-theme="qq-2007"] .topbar { height: 30px; padding: 0 8px; border-bottom: 1px solid #7c9fc2; background: var(--qq-header); box-shadow: inset 0 1px #fff; }
+html[data-levelup-theme="qq-2007"] .task-heading { gap: 5px; }
+html[data-levelup-theme="qq-2007"] .task-heading > svg,
+html[data-levelup-theme="qq-2007"] .task-heading > span,
+html[data-levelup-theme="qq-2007"] .topbar-actions { display: none; }
+html[data-levelup-theme="qq-2007"] .task-heading strong { color: #28577f; font-size: 12px; }
+html[data-levelup-theme="qq-2007"] .conversation { background: #fff; }
+html[data-levelup-theme="qq-2007"] .message-stream { max-width: none; padding: 18px 28px 24px; }
+html[data-levelup-theme="qq-2007"] .message { max-width: min(100%, 1080px); margin-inline: auto; padding: 11px 0; border-bottom: 1px solid #e2ebf3; }
+html[data-levelup-theme="qq-2007"] .message.user { margin-left: auto; }
+html[data-levelup-theme="qq-2007"] .message .message-body { padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+html[data-levelup-theme="qq-2007"] .message-avatar { border: 1px solid #6f9fca; border-radius: 2px; background: #e9f5ff; }
+html[data-levelup-theme="qq-2007"] .assistant-avatar img { content: var(--qq2007-assistant); }
+html[data-levelup-theme="qq-2007"] .markdown-body pre { border: 1px solid #8ca6c2; border-radius: 3px; background: #f0f5f9; box-shadow: inset 1px 1px 3px rgba(62,89,118,.16); }
+html[data-levelup-theme="qq-2007"] .empty-state { width: min(620px, calc(100% - 48px)); min-height: 300px; position: relative; overflow: hidden; padding: 42px 220px 36px 36px; border: 1px solid #7c9fc2; border-radius: 2px; background: linear-gradient(135deg, #fff, #e4f3ff); box-shadow: inset 0 0 0 1px #fff, 0 8px 20px rgba(25,86,151,.15); text-align: left; }
+html[data-levelup-theme="qq-2007"] .empty-state::after { content: ""; position: absolute; right: 12px; bottom: 0; width: 205px; height: 276px; background: var(--qq2007-show) bottom center / contain no-repeat; }
+html[data-levelup-theme="qq-2007"] .empty-state > * { position: relative; z-index: 1; }
+
+html[data-levelup-theme="qq-2007"] .composer-wrap { min-height: 152px; display: flex; align-items: stretch; padding: 0; border-top: 1px solid var(--qq-edge); background: #fff; }
+html[data-levelup-theme="qq-2007"] .composer { width: 100%; max-width: none; height: 100%; min-height: 152px; display: grid; grid-template-rows: minmax(0, 1fr) 38px; overflow: visible; border: 0; border-radius: 0; background: #fff; box-shadow: none; }
+html[data-levelup-theme="qq-2007"] .composer:has(.composer-attachments) { grid-template-rows: auto minmax(0, 1fr) 38px; }
+html[data-levelup-theme="qq-2007"] .composer::before { content: "+  图片/附件"; position: absolute; top: 0; left: 0; right: 0; height: 28px; display: flex; align-items: center; padding: 0 10px; border-bottom: 1px solid var(--qq-edge); background: var(--qq-header); color: #315f87; font-size: 12px; }
+html[data-levelup-theme="qq-2007"] .composer textarea { width: 100%; height: calc(100% - 28px); min-height: 0; margin-top: 28px; padding: 12px 14px; border: 0; border-bottom: 1px solid var(--qq-edge); border-radius: 0; color: #173b61; background: #fff; font-size: 14px; resize: none; }
+html[data-levelup-theme="qq-2007"] .composer:has(.composer-attachments) textarea { height: 100%; margin-top: 0; }
+html[data-levelup-theme="qq-2007"] .composer-attachments { margin-top: 28px; padding: 5px 8px; border-bottom: 1px solid #aac4dc; background: #f5fbff; }
+html[data-levelup-theme="qq-2007"] .composer-toolbar { height: 38px; padding: 4px 8px; background: linear-gradient(#eef8ff, #d5eafa); }
+html[data-levelup-theme="qq-2007"] .mode-switch,
+html[data-levelup-theme="qq-2007"] .permission-button,
+html[data-levelup-theme="qq-2007"] .model-pill { border-color: transparent; border-radius: 2px; background: transparent; }
+html[data-levelup-theme="qq-2007"] .mode-switch button { border-radius: 2px; }
+html[data-levelup-theme="qq-2007"] .mode-switch button.active,
+html[data-levelup-theme="qq-2007"] .permission-button:hover,
+html[data-levelup-theme="qq-2007"] .model-pill:hover { background: var(--qq-selected); box-shadow: inset 0 0 0 1px #d68a18; }
+html[data-levelup-theme="qq-2007"] .send-button,
+html[data-levelup-theme="qq-2007"] .primary-button { border: 1px solid #155a9e; border-radius: 2px; background: linear-gradient(#72b7f2, #2e86d5 48%, #1c6ab5 52%, #4b9be0); color: #fff; box-shadow: inset 0 1px rgba(255,255,255,.78); }
+
+html[data-levelup-theme="qq-2007"] .qq2007-right-panel { min-width: 0; min-height: 0; margin: 4px 4px 4px 8px; display: grid; grid-template-rows: 30px minmax(0, 1fr); overflow: hidden; border: 1px solid var(--qq-edge); background: var(--qq-panel); box-shadow: inset 0 0 0 1px #fff; }
+html[data-levelup-theme="qq-2007"] .qq2007-right-tabs { display: grid; grid-template-columns: 1fr 1fr 28px 28px; align-items: stretch; border-bottom: 1px solid var(--qq-edge); background: var(--qq-header); }
+html[data-levelup-theme="qq-2007"] .qq2007-right-tabs button { border: 0; border-right: 1px solid transparent; background: transparent; color: #28577f; font-size: 12px; font-weight: 700; }
+html[data-levelup-theme="qq-2007"] .qq2007-right-tabs button[aria-selected="true"] { background: #fff; box-shadow: inset 0 -2px #fff; }
+html[data-levelup-theme="qq-2007"] .qq2007-right-tabs > span { display: grid; place-items: center; border-left: 1px solid #89a9c6; color: #315f87; font-size: 16px; }
+html[data-levelup-theme="qq-2007"] .qq2007-environment-panel { min-height: 0; overflow: hidden; }
+html[data-levelup-theme="qq-2007"] .qq2007-environment-panel .inspector { height: 100%; margin: 0; overflow-y: auto; border: 0; border-radius: 0; background: #f6fbff; box-shadow: none; }
+html[data-levelup-theme="qq-2007"] .qq2007-friends-panel { min-height: 0; display: grid; grid-template-rows: auto 56px auto minmax(170px, 1fr) 34px; gap: 4px; padding: 6px; overflow: hidden; background: linear-gradient(rgba(242,249,255,.94), rgba(222,240,255,.96)), var(--qq2007-background) center / cover; }
+html[data-levelup-theme="qq-2007"] .qq2007-profile-card { min-height: 132px; display: grid; grid-template-columns: 116px minmax(0,1fr); border: 1px solid var(--qq-edge); background: rgba(255,255,255,.94); }
+html[data-levelup-theme="qq-2007"] .qq2007-assistant-art { border-right: 1px solid var(--qq-edge); background: #bce6ff var(--qq2007-assistant) center / contain no-repeat; }
+html[data-levelup-theme="qq-2007"] .qq2007-profile-card > div:last-child { min-width: 0; padding: 10px 8px; }
+html[data-levelup-theme="qq-2007"] .qq2007-profile-card strong { display: flex; align-items: center; gap: 5px; color: #173b61; font-size: 13px; }
+html[data-levelup-theme="qq-2007"] .qq2007-profile-card strong > i { width: 9px; height: 9px; border-radius: 50%; background: #4eb625; }
+html[data-levelup-theme="qq-2007"] .qq2007-profile-card em { margin-left: auto; padding: 2px 4px; background: #f2a32b; color: #fff; font-size: 11px; font-style: normal; }
+html[data-levelup-theme="qq-2007"] .qq2007-profile-card p { margin: 12px 0 0; color: #587899; font-size: 11px; }
+html[data-levelup-theme="qq-2007"] .qq2007-profile-card small { display: block; margin-top: 8px; overflow: hidden; color: #7896b2; font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+html[data-levelup-theme="qq-2007"] .qq2007-friend-actions { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--qq-edge); background: var(--qq-header); }
+html[data-levelup-theme="qq-2007"] .qq2007-friend-actions button { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; border: 0; border-right: 1px solid #91afca; background: transparent; color: #315f87; font-size: 10px; }
+html[data-levelup-theme="qq-2007"] .qq2007-friend-actions button:hover { background: var(--qq-selected); }
+html[data-levelup-theme="qq-2007"] .qq2007-friend-groups { border: 1px solid var(--qq-edge); background: rgba(255,255,255,.94); }
+html[data-levelup-theme="qq-2007"] .qq2007-friend-groups > strong { height: 27px; display: flex; align-items: center; padding: 0 8px; border-bottom: 1px solid #8eacc8; background: var(--qq-header); color: #28577f; font-size: 11px; }
+html[data-levelup-theme="qq-2007"] .qq2007-friend-groups > div { height: 48px; display: flex; align-items: center; gap: 8px; padding: 4px 9px; }
+html[data-levelup-theme="qq-2007"] .qq2007-mini-avatar { width: 34px; height: 34px; border: 1px solid #70a0c9; background: #cdeaff var(--qq2007-assistant) center / contain no-repeat; }
+html[data-levelup-theme="qq-2007"] .qq2007-friend-groups p { display: flex; flex-direction: column; gap: 3px; margin: 0; font-size: 11px; }
+html[data-levelup-theme="qq-2007"] .qq2007-friend-groups small { color: #6f8da8; font-size: 9px; }
+html[data-levelup-theme="qq-2007"] .qq2007-show-card { min-height: 0; display: grid; grid-template-rows: 27px minmax(0,1fr); overflow: hidden; border: 1px solid var(--qq-edge); background: rgba(255,255,255,.92); }
+html[data-levelup-theme="qq-2007"] .qq2007-show-card header { display: flex; align-items: center; justify-content: space-between; padding: 0 8px; border-bottom: 1px solid var(--qq-edge); background: var(--qq-header); color: #28577f; font-size: 11px; }
+html[data-levelup-theme="qq-2007"] .qq2007-show-card header small { color: #7896b2; font-size: 9px; }
+html[data-levelup-theme="qq-2007"] .qq2007-show-art { min-height: 0; background: #dff1ff var(--qq2007-show) bottom center / contain no-repeat; }
+html[data-levelup-theme="qq-2007"] .qq2007-friend-search { display: grid; grid-template-columns: 20px minmax(0,1fr); align-items: center; padding: 0 6px; border: 1px solid var(--qq-edge); background: #fff; }
+html[data-levelup-theme="qq-2007"] .qq2007-friend-search input { width: 100%; height: 28px; border: 0; outline: 0; color: #315f87; background: transparent; font-size: 11px; }
+
+html[data-levelup-theme="qq-2007"] .qq2007-statusbar { display: flex; align-items: center; gap: 8px; padding: 0 10px; overflow: hidden; border: 1px solid var(--qq-edge-dark); background: var(--qq-title); color: #fff; font-size: 11px; text-shadow: 0 1px #0b4b8e; white-space: nowrap; }
+html[data-levelup-theme="qq-2007"] .qq2007-statusbar > span { display: inline-flex; align-items: center; gap: 4px; }
+html[data-levelup-theme="qq-2007"] .qq2007-status-security { margin-left: auto; }
+
+html[data-levelup-theme="qq-2007"] .dialog { border-color: #6d91b8; border-radius: 2px; background: #f4faff; }
+html[data-levelup-theme="qq-2007"] .dialog-header,
+html[data-levelup-theme="qq-2007"] .dialog-footer { background: var(--qq-header); }
+html[data-levelup-theme="qq-2007"] input,
+html[data-levelup-theme="qq-2007"] textarea,
+html[data-levelup-theme="qq-2007"] select { border-color: #7fa9cf; border-radius: 2px; }
+html[data-levelup-theme="qq-2007"] .approval-bar { border-color: #df9d28; background: linear-gradient(#fff9dc, #ffedaf); }
+
+@media (max-width: 1180px) {
+  html[data-levelup-theme="qq-2007"] .app-shell.qq2007-layout,
+  html[data-levelup-theme="qq-2007"] .app-shell.qq2007-layout.details-collapsed { grid-template-columns: 230px minmax(0,1fr) 0; }
+  html[data-levelup-theme="qq-2007"] .qq2007-right-panel { display: none; }
+}
+
+@media (max-width: 820px) {
+  html[data-levelup-theme="qq-2007"] .app-shell.qq2007-layout,
+  html[data-levelup-theme="qq-2007"] .app-shell.qq2007-layout.details-collapsed { grid-template-columns: 68px minmax(0,1fr) 0; }
+  html[data-levelup-theme="qq-2007"] .qq2007-toolbar > button { min-width: 42px; padding: 0 5px; }
+  html[data-levelup-theme="qq-2007"] .qq2007-toolbar > button span { display: none; }
+  html[data-levelup-theme="qq-2007"] .qq2007-titlebar { padding-left: 8px; }
+  html[data-levelup-theme="qq-2007"] .qq2007-window-lights { display: none; }
+}

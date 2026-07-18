@@ -1,0 +1,11 @@
+{
+  "name": "levelupagent-theme-qq-2007",
+  "private": true,
+  "version": "3.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "node levelup/build-theme.mjs",
+    "test": "npm run build && node --test levelup/theme-package.test.mjs"
+  },
+  "license": "MIT"
+}

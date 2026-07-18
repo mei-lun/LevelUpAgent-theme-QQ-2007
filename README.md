@@ -1,129 +1,150 @@
-# Codex QQ 2007 for macOS
+# LevelUpAgent QQ 2007 Theme
 
-把 macOS 上的 Codex Desktop 重构成 Windows XP 时代的 QQ2007 桌面客户端风格，同时保留 Codex 原生项目、任务、消息、代码块、Diff、审批与输入功能。
+面向 [LevelUpAgent](https://github.com/mei-lun/LevelUpAgent) 的 QQ 2007 经典蓝色第三方主题。
 
-> 非 OpenAI、Tencent 或 QQ 官方项目。本项目不修改 Codex.app、`app.asar` 或代码签名。
+它不是简单的颜色覆盖，而是一套与 LevelUpAgent 功能结合的完整工作台布局。主题启用后提供 QQ 2007 风格的标题栏、工具栏、项目树、会话区、好友/环境面板、输入区和状态栏；切换或卸载后会恢复 LevelUpAgent 默认界面。
 
-## 当前版本
+## 主要特性
 
-- 版本：`1.7.4`
-- 已测试：macOS 26.3、Apple M4、Codex Desktop 26.715.21425
-- 主预设：`preset-codex-1907-deep`
-- 视图：QQ2007 深度仿制 / 原版 Codex
-- 旧的 `preset-codex-1907-compatible` 已移除
+- 一体化 QQ 2007 蓝色标题栏，不会与 Windows 系统标题栏重复。
+- 右上角提供真实的最小化、最大化/还原和关闭按钮。
+- 标题栏支持拖动，双击可最大化或还原窗口。
+- 左侧保留 LevelUpAgent 项目与会话树。
+- 中央保留消息、Markdown、代码块、审批、Diff、附件和输入功能。
+- 右侧提供环境信息与 LevelUp 好友面板。
+- 顶部工具栏连接新建任务、创作空间、插件、站点、审查、聊天和换肤功能。
+- 支持安装、更新、切换和卸载。
+- 图片全部内嵌，安装后不依赖本仓库路径或网络资源。
 
-## 主要效果
+## 兼容要求
 
-- XP Luna 蓝色标题栏与 Office 2003 风格工具栏
-- 稳定的左侧项目、中央会话、右侧好友三栏布局
-- 彩色 16×16 / 24×24 位图风格图标
-- Codex 原生消息结构，仅给真实代码块增加复古框体
-- 可收起的 Codex 好友、宠物、在线状态与可替换 QQ 秀
-- 顶部「换肤」在深度仿制版与原版 Codex 间切换
-- 昵称、签名、等级、状态、宠物和 QQ 秀可本地个性化
-- 一键验证与一键恢复官方外观
+- 支持 schemaVersion 2 companion `layout.json` 的 LevelUpAgent 构建
+- Windows、macOS 或 Linux 桌面版 LevelUpAgent
+- Node.js 20 或更高版本（仅从源码构建主题时需要）
 
-## 效果预览
+> 主题使用 LevelUpAgent schemaVersion 2 的独立声明式布局文件。较旧版本的 LevelUpAgent 不支持 companion `layout.json`，无法安装此版本。
 
-<p align="center">
-  <img src="docs/images/codex-qq-2007-preview.png" alt="Codex QQ 2007 深度仿制版实机效果" width="1000">
-</p>
+## 直接安装
 
-<p align="center">
-  <sub>macOS 实机截图：XP Luna 标题栏、QQ2007 工具栏、原生项目与输入区、Codex 好友和 QQ 秀。</sub>
-</p>
-
-> 这是一张包含 Codex 界面的效果截图，仅用于 README 展示，不能作为主题背景导入。可安装的纯背景位于 `macos/presets/preset-codex-1907-deep/`。
-
-## 安装
-
-先正常启动一次 Codex，随后完全退出 Codex：
-
-```bash
-git clone git@github.com:source-project/Codex-QQ-2007.git
-cd Codex-QQ-2007/macos
-./scripts/install-dream-skin-macos.sh --no-launch
-
-~/.codex/codex-dream-skin-studio/scripts/switch-theme-macos.sh \
-  --id preset-codex-1907-deep --no-apply
-
-~/.codex/codex-dream-skin-studio/scripts/start-dream-skin-macos.sh \
-  --restart-existing
-```
-
-安装脚本会在桌面创建启动、定制、验证和恢复入口。也可以直接双击 `macos/Install Codex Dream Skin.command`。
-
-### 上面三条脚本分别做什么
-
-| 命令 | 作用 | 是否立即改变 Codex 界面 |
-|------|------|------------------------|
-| `install-dream-skin-macos.sh --no-launch` | 安装换肤引擎，但不启动 Codex | 否 |
-| `switch-theme-macos.sh --id preset-codex-1907-deep --no-apply` | 把“当前选中的主题”设为 QQ2007 深度预设 | 否，只保存选择 |
-| `start-dream-skin-macos.sh --restart-existing` | 用换肤引擎启动 Codex，并应用刚才选中的主题 | 是 |
-
-其中 `--no-apply` 的含义是“只选择主题，暂时不应用”。它适合首次安装：先确定主题，再由下一条 `start-dream-skin-macos.sh` 统一启动和应用。
-
-如果 Codex 已经通过换肤引擎启动，可以省略 `--no-apply`，直接热切换主题：
-
-```bash
-~/.codex/codex-dream-skin-studio/scripts/switch-theme-macos.sh \
-  --id preset-codex-1907-deep
-```
-
-这时脚本会保存主题并立即刷新正在运行的 Codex；通常不需要重启。
-
-> `switch-theme-macos.sh` 负责选择主题包；界面顶部的「换肤」按钮负责在同一个 QQ2007 主题包内切换“深度仿制版 / 原版 Codex”。这是两个不同层级的操作。
-
-## 换肤
-
-深度仿制版顶部工具栏的「换肤」进入原版 Codex。原版左上角保留一个小型「换肤」按钮，用于返回深度仿制版。选择保存在本机，应用重启和热重载后仍然有效。
-
-## 个性化
-
-```bash
-~/.codex/codex-dream-skin-studio/scripts/personalize-codex-2007-macos.sh \
-  --nickname "张奈斯" \
-  --signature "别迷恋姐，姐只是个传说。" \
-  --level "LV07" \
-  --status online \
-  --assistant "/path/to/pet.png" \
-  --qq-show "/path/to/qq-show.png"
-```
-
-所有参数均可单独使用。状态只接受 `online`、`busy`、`offline`。更多说明见 [Codex 2007 使用文档](./docs/CODEX-1907.md)。
-
-## 验证与恢复
-
-```bash
-cd macos
-npm test
-
-./scripts/verify-dream-skin-macos.sh
-
-./scripts/restore-dream-skin-macos.sh \
-  --restore-base-theme --restart-codex
-```
-
-## 目录
+仓库已经包含构建好的主题包：
 
 ```text
-docs/                   QQ2007 使用说明
-macos/assets/           CSS、注入模板与原创位图图标
-macos/presets/          QQ2007 深度预设及抽象回退预设
-macos/scripts/          安装、启动、注入、验证、个性化与恢复
-macos/tests/            单元测试和回归测试
-macos/menubar/          可选 SwiftBar 菜单栏入口
+levelup/dist/qq-2007/levelupagent-qq-2007.levelup-theme
+levelup/dist/qq-2007/layout.json
 ```
+
+安装步骤：
+
+1. 启动 LevelUpAgent。
+2. 打开左下角“模型连接”。
+3. 进入“主题”。
+4. 点击“安装主题包”。
+5. 选择 `levelup/dist/qq-2007/levelupagent-qq-2007.levelup-theme`。
+
+LevelUpAgent 会校验并同时安装主题包与布局文件。安装完成后主题会立即启用，并在下次启动时自动恢复。
+
+## 切换、更新与卸载
+
+- 切换：在“模型连接 → 主题”中选择其他已安装主题或默认主题。
+- 更新：安装相同 ID 的新版本主题包，LevelUpAgent 会原子替换旧版本。
+- 卸载：点击主题旁的垃圾桶按钮。
+- 卸载当前主题：LevelUpAgent 会先切回默认主题，再删除主题包。
+
+切回默认主题时，QQ 2007 专用布局、第三方 CSS 和自定义标题栏会一起移除，系统窗口栏会恢复。
+
+## 从源码构建
+
+在仓库根目录运行：
+
+```bash
+npm run build
+```
+
+构建产物：
+
+```text
+levelup/dist/qq-2007/levelupagent-qq-2007.levelup-theme
+levelup/dist/qq-2007/layout.json
+```
+
+运行完整主题包自检：
+
+```bash
+npm test
+```
+
+测试会重新构建主题，并检查：
+
+- CSS 是否全部限定在当前主题作用域内。
+- 图片是否全部转换为内嵌 `data:` URL。
+- 是否存在未解析的素材占位符。
+- 是否使用远程 CSS、远程图片或 `@import`。
+- 生成文件是否为有效的 LevelUpAgent schema v2 主题包与 schema v1 声明式布局。
+- companion 布局是否包含且仅包含一次安全关键的 `workspace` slot。
+- 无系统窗口装饰时是否提供真实的 QQ2007 标题栏控制。
+
+## 项目结构
+
+```text
+LevelUpAgent-theme-QQ-2007/
+├─ levelup/
+│  ├─ assets/                  主题使用的背景、助手、QQ 秀和图标
+│  ├─ dist/qq-2007/      该主题独占的发布目录
+│  ├─ manifest.json            schemaVersion 2 主题信息和 companion 文件声明
+│  ├─ layout.json              QQ2007 声明式布局、窗口和功能 slots
+│  ├─ theme.css                QQ 2007 主题样式
+│  ├─ build-theme.mjs          素材内嵌和主题打包脚本
+│  └─ theme-package.test.mjs   主题包安全与完整性测试
+├─ package.json                构建和测试命令
+├─ LICENSE
+└─ NOTICE.md
+```
+
+## 主题包说明
+
+主题包是一个 UTF-8 JSON 文件，包含：
+
+- `schemaVersion: 2`
+- 主题 ID、名称、版本、作者和许可信息
+- `layoutFile: "layout.json"`
+- 严格作用域化的 CSS
+- Base64 内嵌图片资源
+
+独立 `layout.json` 使用布局 schemaVersion 1，定义标题栏、工具栏、左栏、会话区、右栏和状态栏的真实挂载顺序。它不包含 JavaScript 或任意宿主调用。
+
+构建产物使用 `levelupagent-qq-2007.levelup-theme`，主题 ID、布局 ID 和发布目录统一使用 `qq-2007`。
 
 ## 安全边界
 
-- CDP 仅监听 `127.0.0.1`，运行换肤时不要启动不可信的本机程序。
-- 不修改官方 Codex 二进制、安装包或签名。
-- 不读取或改写 API Key、Base URL 与模型供应商配置。
-- 应用升级可能改变原生 DOM；升级后请先运行 Verify。
+- 主题包不执行 JavaScript。
+- 布局仅使用 LevelUpAgent 注册的 slots，不执行脚本或任意业务代码。
+- 不读取或修改 API Key、Provider、会话、数据库和本地项目文件。
+- 不包含远程 CSS、远程图片或可执行运行时。
+- 不修改 LevelUpAgent 安装目录。
+- 所有主题选择器都限定在 `html[data-levelup-theme="qq-2007"]`。
+- 只有主题启用时才应用 QQ 2007 布局和窗口装饰。
 
-## 来源与许可
+## 开发规范
 
-本项目基于 [Fei-Away/Codex-Dream-Skin](https://github.com/Fei-Away/Codex-Dream-Skin) 的 macOS 运行引擎继续开发，软件代码沿用 MIT License。
+修改主题时：
 
-QQ2007 深度预设中的背景、宠物和 QQ 秀为本项目生成的虚构素材，不包含 Tencent 官方企鹅或 QQ 客户端资源。`Codex`、`OpenAI`、`QQ`、`Tencent` 及相关标识归各自权利人所有。详见 [NOTICE](./NOTICE.md)。
+1. 将图片放入 `levelup/assets/`。
+2. 通过 `levelup/build-theme.mjs` 将图片内嵌到主题包。
+3. 不添加全局、无作用域 CSS。
+4. 不依赖主题仓库绝对路径。
+5. 每次修改 CSS、素材、manifest 或构建器后运行 `npm test`。
+6. 在真实 LevelUpAgent 中验证安装、切换、重启和卸载。
+7. 涉及标题栏时，真实验证最小化、最大化、还原、关闭和拖动。
+
+LevelUpAgent 宿主侧的完整主题开发规范见 LevelUpAgent 项目中的：
+
+```text
+docs/THEME_DEVELOPMENT.md
+docs/THEME_AGENT_WORKFLOW.md
+docs/THEMES.md
+docs/LAYOUTS.md
+```
+
+## 许可与声明
+
+本主题是非官方项目，与 LevelUpAgent、OpenAI、Tencent 或 QQ 无隶属、授权或赞助关系。项目历史、素材和商标说明见 [NOTICE.md](./NOTICE.md)。

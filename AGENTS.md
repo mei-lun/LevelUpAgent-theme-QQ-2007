@@ -1,10 +1,9 @@
 # Repository Guidelines
 
-- `macos/` is the product root. Do not add Windows runtime code to this repository.
-- Run `cd macos && npm test` before publishing changes.
-- For renderer or CSS changes, also run live verification on a real Codex task page.
-- Never modify Codex.app, `app.asar`, its code signature, API keys, or Base URLs.
-- Keep CDP loopback-only and preserve native sidebar, task, message, Diff, approval, and composer nodes.
-- Update `macos/CHANGELOG.md` and bump `macos/VERSION` for release-worthy changes.
-- Use two-space indentation. Shell entry points use `set -euo pipefail`; Node files use ESM.
-- Do not commit private screenshots, credentials, local state, release ZIPs, or user-supplied artwork without redistribution rights.
+- `levelup/` is the product root; keep this repository specific to the LevelUpAgent theme package.
+- Run `npm test` after changing CSS, metadata, assets, or the build script.
+- Keep every CSS selector scoped to `html[data-levelup-theme="qq-2007"]`.
+- Theme packages must remain self-contained and must not use remote CSS, remote assets, `@import`, or executable JavaScript.
+- Keep image assets in `levelup/assets/` and embed them through `levelup/build-theme.mjs`.
+- Use two-space indentation and ESM for Node.js files.
+- Do not commit credentials, private screenshots, local application state, or unrelated platform runtimes.
