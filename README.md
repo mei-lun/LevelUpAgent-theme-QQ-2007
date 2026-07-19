@@ -4,6 +4,10 @@
 
 它不是简单的颜色覆盖，而是一套与 LevelUpAgent 功能结合的完整工作台布局。主题启用后提供 QQ 2007 风格的标题栏、工具栏、项目树、会话区、好友/环境面板、输入区和状态栏；切换或卸载后会恢复 LevelUpAgent 默认界面。
 
+## 实际演示
+
+![LevelUpAgent QQ 2007 主题实际演示](./levelup/assets/qq-2007-preview.png)
+
 ## 主要特性
 
 - 一体化 QQ 2007 蓝色标题栏，不会与 Windows 系统标题栏重复。
@@ -146,5 +150,5 @@ docs/LAYOUTS.md
 ```
 
 ## 许可与声明
-本项目基于 [source-project/Codex-QQ-2007](https://github.com/source-project/Codex-QQ-2007) 继续开发
+本项目参考 [Codex-QQ-2007](https://github.com/source-project/Codex-QQ-2007) 项目继续开发。
 本主题是非官方项目，与 LevelUpAgent、OpenAI、Tencent 或 QQ 无隶属、授权或赞助关系。项目历史、素材和商标说明见 [NOTICE.md](./NOTICE.md)。
