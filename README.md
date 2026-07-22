@@ -22,11 +22,11 @@
 
 ## 兼容要求
 
-- 支持 schemaVersion 2 companion `layout.json` 的 LevelUpAgent 构建
+- 支持 schemaVersion 2 内置布局的 LevelUpAgent 构建
 - Windows、macOS 或 Linux 桌面版 LevelUpAgent
 - Node.js 20 或更高版本（仅从源码构建主题时需要）
 
-> 主题使用 LevelUpAgent schemaVersion 2 的独立声明式布局文件。较旧版本的 LevelUpAgent 不支持 companion `layout.json`，无法安装此版本。
+> 主题使用 LevelUpAgent schemaVersion 2 的内置声明式布局。较旧版本的 LevelUpAgent 不支持内置布局，无法安装此版本。
 
 ## 直接安装
 
@@ -34,8 +34,9 @@
 
 ```text
 levelup/dist/qq-2007/levelupagent-qq-2007.levelup-theme
-levelup/dist/qq-2007/layout.json
 ```
+
+布局已内置在上述主题包中，无需额外携带 `layout.json`。
 
 安装步骤：
 
@@ -45,7 +46,7 @@ levelup/dist/qq-2007/layout.json
 4. 点击“安装主题包”。
 5. 选择 `levelup/dist/qq-2007/levelupagent-qq-2007.levelup-theme`。
 
-LevelUpAgent 会校验并同时安装主题包与布局文件。安装完成后主题会立即启用，并在下次启动时自动恢复。
+LevelUpAgent 会校验并安装主题包内置的布局。安装完成后主题会立即启用，并在下次启动时自动恢复。
 
 ## 切换、更新与卸载
 
@@ -68,8 +69,9 @@ npm run build
 
 ```text
 levelup/dist/qq-2007/levelupagent-qq-2007.levelup-theme
-levelup/dist/qq-2007/layout.json
 ```
+
+发布目录只包含这一个可安装主题包。
 
 运行完整主题包自检：
 
@@ -84,7 +86,7 @@ npm test
 - 是否存在未解析的素材占位符。
 - 是否使用远程 CSS、远程图片或 `@import`。
 - 生成文件是否为有效的 LevelUpAgent schema v2 主题包与 schema v1 声明式布局。
-- companion 布局是否包含且仅包含一次安全关键的 `workspace` slot。
+- 内置布局是否包含且仅包含一次安全关键的 `workspace` slot。
 - 无系统窗口装饰时是否提供真实的 QQ2007 标题栏控制。
 
 ## 项目结构
@@ -93,8 +95,8 @@ npm test
 LevelUpAgent-theme-QQ-2007/
 ├─ levelup/
 │  ├─ assets/                  主题使用的背景、助手、QQ 秀和图标
-│  ├─ dist/qq-2007/      该主题独占的发布目录
-│  ├─ manifest.json            schemaVersion 2 主题信息和 companion 文件声明
+│  ├─ dist/qq-2007/            该主题独占的发布目录
+│  ├─ manifest.json            schemaVersion 2 主题信息
 │  ├─ layout.json              QQ2007 声明式布局、窗口和功能 slots
 │  ├─ theme.css                QQ 2007 主题样式
 │  ├─ build-theme.mjs          素材内嵌和主题打包脚本
@@ -110,11 +112,11 @@ LevelUpAgent-theme-QQ-2007/
 
 - `schemaVersion: 2`
 - 主题 ID、名称、版本、作者和许可信息
-- `layoutFile: "layout.json"`
+- `layout`：内置的 schemaVersion 1 声明式布局
 - 严格作用域化的 CSS
 - Base64 内嵌图片资源
 
-独立 `layout.json` 使用布局 schemaVersion 1，定义标题栏、工具栏、左栏、会话区、右栏和状态栏的真实挂载顺序。它不包含 JavaScript 或任意宿主调用。
+主题包内的 `layout` 使用布局 schemaVersion 1，定义标题栏、工具栏、左栏、会话区、右栏和状态栏的真实挂载顺序。它不包含 JavaScript 或任意宿主调用。
 
 构建产物使用 `levelupagent-qq-2007.levelup-theme`，主题 ID、布局 ID 和发布目录统一使用 `qq-2007`。
 

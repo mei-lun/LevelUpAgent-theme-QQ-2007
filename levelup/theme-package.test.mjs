@@ -9,7 +9,7 @@ const root = path.dirname(fileURLToPath(import.meta.url));
 test("LevelUpAgent theme source is scoped and the bundle is self-contained", async () => {
   const manifest = JSON.parse(await fs.readFile(path.join(root, "manifest.json"), "utf8"));
   const projectPackage = JSON.parse(await fs.readFile(path.join(root, "..", "package.json"), "utf8"));
-  const sourceLayout = JSON.parse(await fs.readFile(path.join(root, manifest.layoutFile), "utf8"));
+  const sourceLayout = JSON.parse(await fs.readFile(path.join(root, "layout.json"), "utf8"));
   const sourceCss = await fs.readFile(path.join(root, "theme.css"), "utf8");
   const scope = `[data-levelup-theme="${manifest.id}"]`;
   for (const header of ruleHeaders(sourceCss)) {
@@ -28,16 +28,14 @@ test("LevelUpAgent theme source is scoped and the bundle is self-contained", asy
 
   const outputDirectory = path.join(root, "dist", manifest.id);
   const bundlePath = path.join(outputDirectory, "levelupagent-qq-2007.levelup-theme");
+  const outputFiles = await fs.readdir(outputDirectory);
   const bundleBytes = await fs.readFile(bundlePath);
-  const builtLayoutBytes = await fs.readFile(path.join(outputDirectory, manifest.layoutFile));
   const bundle = JSON.parse(bundleBytes.toString("utf8"));
-  const builtLayout = JSON.parse(builtLayoutBytes.toString("utf8"));
   assert.equal(bundle.schemaVersion, 2);
   assert.equal(bundle.id, manifest.id);
   assert.equal(bundle.version, projectPackage.version);
-  assert.equal(bundle.layoutFile, "layout.json");
-  assert.ok(!("layout" in bundle), "schemaVersion 2 must not use the legacy layout field");
-  assert.deepEqual(builtLayout, sourceLayout);
+  assert.ok(!("layoutFile" in bundle), "Embedded layouts must not declare a companion file");
+  assert.deepEqual(bundle.layout, sourceLayout);
   assert.equal(sourceLayout.schemaVersion, 1);
   assert.equal(sourceLayout.window.decorations, false);
   assert.equal(sourceLayout.root.type, "container");
@@ -49,8 +47,9 @@ test("LevelUpAgent theme source is scoped and the bundle is self-contained", asy
   assert.ok(!nodes.some((node) => node.type === "script" || "script" in node || "html" in node || "command" in node));
   assert.ok(bundleBytes.length <= 12 * 1024 * 1024, "Theme package exceeds 12 MiB");
   assert.ok(Buffer.byteLength(bundle.css, "utf8") <= 10 * 1024 * 1024, "Theme CSS exceeds 10 MiB");
-  assert.ok(builtLayoutBytes.length <= 512 * 1024, "Layout exceeds 512 KiB");
-  await assert.rejects(fs.access(path.join(root, "dist", "layout.json")));
+  assert.ok(Buffer.byteLength(JSON.stringify(bundle.layout), "utf8") <= 512 * 1024, "Layout exceeds 512 KiB");
+  assert.deepEqual(outputFiles, ["levelupagent-qq-2007.levelup-theme"]);
+  await assert.rejects(fs.access(path.join(outputDirectory, "layout.json")));
   await assert.rejects(fs.access(path.join(root, "dist", "levelupagent-qq-2007.levelup-theme")));
   assert.ok(bundle.css.includes("data:image/jpeg;base64,"));
   assert.ok(bundle.css.includes("data:image/png;base64,"));

@@ -2,7 +2,7 @@
 
 本目录包含 QQ 2007 主题面向 LevelUpAgent 的全部运行时源码和构建产物。
 
-主题启用时加载独立 `layout.json`，由 LevelUpAgent 的声明式布局运行时提供：
+主题启用时加载主题包内置的 `layout`，由 LevelUpAgent 的声明式布局运行时提供：
 
 - QQ 2007 风格一体化标题栏与真实窗口控制。
 - 主工具栏、项目树、中央会话和输入区。
@@ -16,10 +16,10 @@
 | 路径 | 用途 |
 | --- | --- |
 | `assets/` | 构建时内嵌的图片资源 |
-| `manifest.json` | schemaVersion 2 主题信息和 companion 布局文件声明 |
+| `manifest.json` | schemaVersion 2 主题信息 |
 | `layout.json` | QQ2007 结构、窗口装饰和功能 slots |
 | `theme.css` | 严格限定在主题 ID 下的全部视觉样式 |
-| `build-theme.mjs` | 读取素材、CSS 和布局，生成主题包与 companion 布局 |
+| `build-theme.mjs` | 读取素材、CSS 和布局，生成内置布局的主题包 |
 | `theme-package.test.mjs` | 验证作用域、素材内嵌和安全限制 |
 | `dist/` | 可直接安装的 `.levelup-theme` 文件 |
 
@@ -35,10 +35,9 @@ npm run build
 
 ```text
 levelup/dist/qq-2007/levelupagent-qq-2007.levelup-theme
-levelup/dist/qq-2007/layout.json
 ```
 
-产物文件名为 `levelupagent-qq-2007.levelup-theme`，主题 ID、布局 ID 和发布目录统一使用 `qq-2007`。
+布局已内置在主题包中，发布目录不再生成独立 `layout.json`。产物文件名为 `levelupagent-qq-2007.levelup-theme`，主题 ID、布局 ID 和发布目录统一使用 `qq-2007`。
 
 ## 测试
 

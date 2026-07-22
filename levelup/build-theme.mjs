@@ -22,12 +22,10 @@ const manifest = JSON.parse(await fs.readFile(path.join(root, "manifest.json"), 
 const outputDirectory = path.join(distRoot, manifest.id);
 const output = path.join(outputDirectory, "levelupagent-qq-2007.levelup-theme");
 if (manifest.schemaVersion !== 2) throw new Error("Custom-layout themes must use schemaVersion 2");
-if (typeof manifest.layoutFile !== "string"
-  || path.basename(manifest.layoutFile) !== manifest.layoutFile
-  || !(manifest.layoutFile === "layout.json" || manifest.layoutFile.endsWith(".layout.json"))) {
-  throw new Error("Theme layoutFile must be a local companion filename");
+if (Object.hasOwn(manifest, "layout") || Object.hasOwn(manifest, "layoutFile")) {
+  throw new Error("Embedded-layout themes must not declare layout or layoutFile in the source manifest");
 }
-const layoutPath = path.join(root, manifest.layoutFile);
+const layoutPath = path.join(root, "layout.json");
 const layout = JSON.parse(await fs.readFile(layoutPath, "utf8"));
 validateLayout(layout);
 let css = await fs.readFile(path.join(root, "theme.css"), "utf8");
@@ -40,10 +38,8 @@ if (!css.includes(`[data-levelup-theme="${manifest.id}"]`)) throw new Error("The
 
 await fs.rm(distRoot, { recursive: true, force: true });
 await fs.mkdir(outputDirectory, { recursive: true });
-await fs.writeFile(output, `${JSON.stringify({ ...manifest, css })}\n`, "utf8");
-await fs.writeFile(path.join(outputDirectory, manifest.layoutFile), `${JSON.stringify(layout, null, 2)}\n`, "utf8");
+await fs.writeFile(output, `${JSON.stringify({ ...manifest, css, layout })}\n`, "utf8");
 console.log(output);
-console.log(path.join(outputDirectory, manifest.layoutFile));
 
 function validateLayout(layout) {
   if (layout?.schemaVersion !== 1) throw new Error("Layout schemaVersion must be 1");
